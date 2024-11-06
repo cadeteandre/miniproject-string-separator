@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <form onsubmit="return false">
+        <label for="stringsToSeparate">Zu trennende Zeichenketten</label>
+        <input type="text" name="stringsToSeparate" id="stringsToSeparate">
+        <label for="separatingCharString">Trennen bei Zeichenketten</label>
+        <input type="text" name="separatingCharString" id="separatingCharString">
+        <div>
+          <label for="whentoSeparate">
+            <input type="radio" name="whentoSeparate" id="before">Davor
+        </label>
+        <label for="whentoSeparate">
+            <input type="radio" name="whentoSeparate" id="after">Danach
+        </label>
+        </div>
+        <button>Hier clicken</button>
+      </form>
+      <section id="results">
+        <h2>Ausgabe</h2>
+        <div>
+          <h3>Vorderer Teil</h3>
+          <p id="firstPart"></p>
+        </div>
+        <div>
+          <h3>Vorderer Teil</h3>
+          <p id="secondPart"></p>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
