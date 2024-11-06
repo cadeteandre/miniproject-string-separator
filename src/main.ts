@@ -15,23 +15,27 @@ const stringSeparator = (): void => {
     let stringFirstPart: string;
     let stringSecondPart: string;
 
-    if(separatingCharStringInput.value.length > 1) {
-        alert('Bitte nur ein Zeichen eingeben');
-    } else {
-        switch(true) {
-            case (beforeRadioInput.checked):
-                stringFirstPart = stringToSeparate.substring(0, separatingCharIndex);
-                stringSecondPart = stringToSeparate.substring(separatingCharIndex);
-                firstPart.innerText = stringFirstPart;
-                secondPart.innerText = stringSecondPart;
-                break;
-            case (afterRadioInput.checked):
-                stringFirstPart = stringToSeparate.substring(0, separatingCharIndex + 1);
-                stringSecondPart = stringToSeparate.substring(separatingCharIndex + 1);
-                firstPart.innerText = stringFirstPart;
-                secondPart.innerText = stringSecondPart;
-                break;
+    if(stringsToSeparateInput.value !== '') {
+        if(separatingCharStringInput.value.length > 1 || separatingCharStringInput.value === '') {
+            alert('Bitte ein Zeichen eingeben (nur ein)');
+        } else {
+            switch(true) {
+                case (beforeRadioInput.checked):
+                    stringFirstPart = stringToSeparate.substring(0, separatingCharIndex);
+                    stringSecondPart = stringToSeparate.substring(separatingCharIndex);
+                    firstPart.innerText = stringFirstPart;
+                    secondPart.innerText = stringSecondPart;
+                    break;
+                case (afterRadioInput.checked):
+                    stringFirstPart = stringToSeparate.substring(0, separatingCharIndex + 1);
+                    stringSecondPart = stringToSeparate.substring(separatingCharIndex + 1);
+                    firstPart.innerText = stringFirstPart;
+                    secondPart.innerText = stringSecondPart;
+                    break;
+            }
         }
+    } else {
+        alert('Geben Sie das Wort oder den Satz ein, das/den Sie trennen möchten');
     }
 }
 
